@@ -3,7 +3,7 @@
 
 #include "memtrace.h"
 #include "rstring.h"
-#include <vector>
+#include <list>
 
 class StringPool {
     struct Element {
@@ -12,7 +12,7 @@ class StringPool {
         Element(size_t cap,bool itsfree = true) :rstring(cap),itsfree(itsfree) {};
         Element(RString rstring, bool itsfree = true) :rstring(rstring), itsfree(itsfree) {};
     };
-    std::vector<Element> container;
+    std::list<Element> container;
   public:
     // Létrehoz obj_num db RString obejktumot, 
     // melyek kapacitása init_cap méretű

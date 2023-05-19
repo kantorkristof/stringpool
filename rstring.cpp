@@ -1,5 +1,6 @@
 #include "memtrace.h"
 #include "rstring.h"
+#include <iostream>
 
 
 
@@ -27,4 +28,9 @@ RString& RString::operator=(const char* str) {
 	if (strlen(str) >= cap) throw "QVU4YG";
 	strcpy(arr, str);
 	return *this;
+}
+
+RString::~RString() {
+	std::cout << "XDDD";
+	//	delete[] arr;
 }

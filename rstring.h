@@ -28,6 +28,7 @@ class RString {
     // Bemásolja a karaktertömbbe a paraméterül kapott 
     // karakterláncot, ha nem fér bele, eldobja a neptun kódot
     RString& operator=(const char* str);
+    ~RString();
 };
 
 #endif

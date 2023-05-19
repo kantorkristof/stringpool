@@ -16,7 +16,7 @@
 #include "rstring.h"
 #include "pool.h"
 
-#define ELKESZULT 11
+#define ELKESZULT 15
 
 
 /* ELKESZULT makró:
@@ -200,8 +200,11 @@ int main() {
             EXPECT_EQ(1u, pool.free_size());
             EXPECT_EQ(1u, pool.size());
             RString& tmp = pool.acquire(15);
+            EXPECT_EQ(2u, pool.size());
             pool.release(pool.acquire(20));
+            EXPECT_EQ(3u, pool.size());
             pool.release(pool.acquire(25));
+            EXPECT_EQ(4u, pool.size());
             pool.release(tmp);
             EXPECT_EQ(4u, pool.free_size());
             EXPECT_EQ(4u, pool.size());
